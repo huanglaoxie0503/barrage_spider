@@ -6,15 +6,6 @@ import pandas as pd
 from fake_useragent import UserAgent
 
 
-"""
-分析思路：
-    在芒果TV网页版打开第7期节目，等待广告加载完毕，同时打开chrome开发者工具的network选项卡。由于请求很多，
-    而且随着时间推移，会越来越多。所以我采取了先清空再等待的方式。发现前面大多加载的都是图片，自然这不是我们的目标。
-    过了一会儿之后，发现一条可疑的请求，点击一看，真的出现了弹幕内容。interval是60，猜测可能是表示一个间隔，每60s会有一个新的请求。
-    于是使用filter过滤了以“rdb”开头的请求，发现这些都是弹幕，而且next都是60000的倍数，猜测表示的是60000毫秒，也就是60秒。
-"""
-
-
 def get_data():
     ua = UserAgent()
     url = "https://galaxy.bz.mgtv.com/rdbarrage"
