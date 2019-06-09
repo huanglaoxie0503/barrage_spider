@@ -42,7 +42,7 @@ def get_data():
                     print("爬取第{0}分钟的弹幕...，当前弹幕数量{1}".format(i + 1, count))
                 time.sleep(5)
         except:
-            print("第{}分钟弹幕爬取失败!当前弹幕数量{}".format(i + 1, count))
+            print("第{0}分钟弹幕爬取失败!当前弹幕数量{1}".format(i + 1, count))
             continue
 
         rdb_df = pd.DataFrame(content)
